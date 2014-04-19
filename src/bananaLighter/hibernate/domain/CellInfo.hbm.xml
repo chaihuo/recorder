@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-4-19 23:23:35 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="bananaLighter.hibernate.domain.CellInfo" table="cell_info" catalog="recorderdb">
+        <id name="cellNo" type="java.lang.Integer">
+            <column name="cell_no" />
+            <generator class="identity" />
+        </id>
+        <property name="cellPhoneNo" type="java.lang.Long">
+            <column name="cell_phone_no" precision="11" scale="0" />
+        </property>
+        <property name="waterLevel" type="java.lang.Float">
+            <column name="water_level" precision="4" />
+        </property>
+    </class>
+</hibernate-mapping>

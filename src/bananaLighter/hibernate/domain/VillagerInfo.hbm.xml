@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-4-19 23:23:35 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="bananaLighter.hibernate.domain.VillagerInfo" table="villager_info" catalog="recorderdb">
+        <composite-id name="id" class="bananaLighter.hibernate.domain.VillagerInfoId">
+            <key-property name="userNo" type="int">
+                <column name="user_no" />
+            </key-property>
+            <key-property name="countryName" type="string">
+                <column name="country_name" length="200" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="countryInfo" class="bananaLighter.hibernate.domain.CountryInfo" update="false" insert="false" fetch="select">
+            <column name="country_no" />
+            <column name="country_name" length="200" not-null="true" />
+        </many-to-one>
+        <property name="userName" type="string">
+            <column name="user_name" length="20" not-null="true" />
+        </property>
+        <set name="cardInfos" table="card_info" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_no" />
+                <column name="country_name" length="200" />
+            </key>
+            <one-to-many class="bananaLighter.hibernate.domain.CardInfo" />
+        </set>
+    </class>
+</hibernate-mapping>

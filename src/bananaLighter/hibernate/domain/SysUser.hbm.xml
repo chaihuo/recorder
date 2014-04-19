@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-4-19 23:23:35 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="bananaLighter.hibernate.domain.SysUser" table="sys_user" catalog="recorderdb">
+        <id name="sysUserNo" type="java.lang.Integer">
+            <column name="sys_user_no" />
+            <generator class="identity" />
+        </id>
+        <property name="sysUserName" type="string">
+            <column name="sys_user_name" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>
